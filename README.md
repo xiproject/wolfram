@@ -1,12 +1,12 @@
-Wolfram agent
+#Wolfram agent
 
-## Requirements
-Procure the API key from (Wolfram)[https://developer.wolframalpha.com] and place it in `config.json`.
+## Prerequisites
+Procure the API key from [Wolfram Alpha](https://developer.wolframalpha.com) and place it in `config.json`.
 
 ###Example
 ```js
     {
-    "auth": "<ENTER_API_KEY>"
+        "auth": "<API_KEY>"
     }
 
 ```
