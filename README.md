@@ -1,4 +1,4 @@
-#Wolfram agent
+#Wolfram Alpha agent
 
 ## Prerequisites
 Procure the API key from [Wolfram Alpha](https://developer.wolframalpha.com) and place it in `config.json`.
