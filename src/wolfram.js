@@ -1,6 +1,6 @@
 var xpath = require('xpath');
 var dom = require('xmldom').DOMParser;
-var config = require('./config.json');
+var config = require('../config.json');
 
 var request;
 
@@ -13,6 +13,10 @@ if (config.proxy) {
 }
 
 var query_url = "http://api.wolframalpha.com/v2/query?format=plaintext&primary=true&appid=" + config.auth + "&input=";
+
+
+
+
 
 function analyzeXML(xml) {
     var doc = new dom().parseFromString(xml);
@@ -34,5 +38,7 @@ function query(q, cb) {
         }
     });
 }
+
+
 
 exports.query = query;

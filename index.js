@@ -1,7 +1,7 @@
 var xal = require('../../xal-javascript');
 var _ = require('underscore');
 var nlpparser = require('speakeasy-nlp');
-var wolfram = require('./wolfram');
+var wolfram = require('./src/wolfram');
 
 function containsObject(obj, list) {
     var i;
@@ -29,7 +29,7 @@ xal.on('xi.event.input.text', function(state, done) {
 
     if (isQuestion(text)) {
         wolfram.query(text, function(err, answer) {
-            if(err){
+            if(err) {
                 xal.log.error(err);
                 return;
             }
@@ -43,7 +43,7 @@ xal.on('xi.event.input.text', function(state, done) {
                 });
             }
             else{
-                xal.log.debug('Queried but did not get relevant answer');
+                xal.log.warn('Queried but did not get relevant answer');
             }
         });
     }
