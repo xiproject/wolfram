@@ -14,11 +14,3 @@ Procure the API key from [Wolfram Alpha](https://developer.wolframalpha.com) and
 ## Usage
 
 The agent subscribes to `xi.event.input.text` and publishes the result to `xi.event.output.text`
-
-
-
-
-
-
-
-

@@ -1,6 +1,14 @@
 var xpath = require('xpath');
 var dom = require('xmldom').DOMParser;
-var config = require('../config.json');
+var xal = require('../../../xal-javascript');
+
+try {
+    var config = require('../config.json');
+} catch (e) {
+    xal.log.fatal('config.json not found. Procure the API key from [Wolfram Alpha](https://developer.wolframalpha.com) and place it in config.json. See the README for more details');
+    process.exit(1);
+}
+
 
 var request;
 
