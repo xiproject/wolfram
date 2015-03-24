@@ -1,6 +1,7 @@
 var xpath = require('xpath');
 var dom = require('xmldom').DOMParser;
 var xal = require('../../../xal-javascript');
+var request = require('request');
 
 try {
     var config = require('../config.json');
@@ -10,15 +11,7 @@ try {
 }
 
 
-var request;
 
-if (config.proxy) {
-    request = require('request').defaults({
-        proxy: config.proxy
-    });
-} else {
-    request = require('request');
-}
 
 var query_url = "http://api.wolframalpha.com/v2/query?format=plaintext&primary=true&appid=" + config.auth + "&input=";
 
