@@ -18,7 +18,7 @@ function analyzeXML(xml) {
     var doc = new dom().parseFromString(xml);
     var nodes = xpath.select("//pod[@title='Result']/subpod/plaintext", doc);
     var result = null;
-    if (nodes.length !== 0) {
+    if (nodes.length !== 0 && nodes[0].firstChild) {
         result = nodes[0].firstChild.data;
     }
     return result;
