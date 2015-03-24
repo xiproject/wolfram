@@ -6,7 +6,7 @@ var wolfram = require('./src/wolfram');
 function containsObject(obj, list) {
     var i;
     for (i = 0; i < list.length; i++) {
-        if (obj.indexOf(list[i]) === 0) {
+        if (obj && obj.indexOf(list[i]) === 0) {
             return true;
         }
     }
