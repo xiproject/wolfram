@@ -14,7 +14,7 @@ function containsObject(obj, list) {
 }
 
 function isQuestion(query) {
-    var question_actions = ["how", "what", "when", "who", "whom"];
+    var question_actions = ["how", "what", "when", "who", "whom", "why", "where"];
     return containsObject(nlpparser.classify(query).action, question_actions);
 }
 
