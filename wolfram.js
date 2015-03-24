@@ -25,14 +25,26 @@ function analyzeXML(xml) {
 }
 
 function query(q, cb) {
-    request(query_url + encodeURIComponent(q), function(err, response, body) {
-        if(err) {
-            cb(err);
-        }
-        else{
-            cb(null, analyzeXML(body));
-        }
-    });
+
+    var tries = 0;
+    var maxTries = 3;
+
+    var queryHelper = function () {
+        request(query_url + encodeURIComponent(q), function(err, response, body) {
+            if(err) {
+                if (tries < maxTries){
+                    tries += 1;
+                    queryHelper();
+                } else {
+                    cb(err);
+                }
+
+            } else {
+                cb(null, analyzeXML(body));
+            }
+        });
+    };
+    queryHelper();
 }
 
 exports.query = query;
