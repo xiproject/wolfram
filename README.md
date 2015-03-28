@@ -9,3 +9,5 @@ Queries Wolfram Alpha for answers and speaks it out.
 ## Run
 `$ node index.js --logfile wolfram.log 2>&1 | bunyan`
 
+## License
+GPLv3
