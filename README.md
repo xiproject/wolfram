@@ -1,16 +1,8 @@
 #Wolfram Alpha agent
-
+Queries Wolfram Alpha for answers and speaks it out.
 ## Prerequisites
-Procure the API key from [Wolfram Alpha](https://developer.wolframalpha.com) and place it in `config.json`.
+Procure the API key from [Wolfram Alpha](https://developer.wolframalpha.com) and place it in `config.json` (take a look at `config.json.sample`).
 
-###Example
-```js
-    {
-        "auth": "<API_KEY>"
-    }
+## Run
+`$ node index.js --logfile wolfram.log 2>&1 | bunyan`
 
-```
-
-## Usage
-
-The agent subscribes to `xi.event.input.text` and publishes the result to `xi.event.output.text`
