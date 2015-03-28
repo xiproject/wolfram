@@ -43,7 +43,7 @@ xal.on('xi.event.input.text', function(state, done) {
                 });
             }
             else{
-                xal.log.warn('Queried but did not get relevant answer');
+                xal.log.info('Queried but did not get relevant answer');
             }
         });
     }
